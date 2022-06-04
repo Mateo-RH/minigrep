@@ -1,4 +1,4 @@
-#Usage
+# Usage
 ### Case sensitive
 * cargo run <query> <filename>
 * cargo run from poem.txt

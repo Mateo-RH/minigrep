@@ -1,3 +1,8 @@
+//! # Minigrep
+//! A simple command line utility to search for lines containing a pattern.
+//!
+//! *Example taken from the book: "Learning Rust: An Introduction to Programming."*
+
 use std::{env, error::Error, fs};
 
 pub struct Config {
@@ -45,6 +50,18 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Search for the query in the given contents.
+///
+/// # Examples
+///
+/// ```
+/// let query = "duct";
+/// let contents = "safe, fast, productive.";
+/// assert_eq!(
+///    vec!["safe, fast, productive."],
+///    search(query, contents)
+///    );
+///    ```
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
